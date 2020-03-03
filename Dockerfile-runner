@@ -1,0 +1,5 @@
+FROM testing/base:latest
+
+#CMD ["mvn", "build", "--host", "0.0.0.0"]
+
+ENTRYPOINT ["python3", "main.py"]

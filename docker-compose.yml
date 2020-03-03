@@ -1,0 +1,28 @@
+version: '2'
+services:
+    base-build:
+      image: testing/base
+      container_name: testing-base
+
+    testing-service-1:
+      build:
+        context: .
+        dockerfile: Dockerfile-runner
+      image: testing/service
+      container_name: testing-service-1
+      ports:
+        - 9080:5000
+      depends_on:
+        - base-build
+
+    testing-service-2:
+      build:
+        context: .
+        dockerfile: Dockerfile-runner
+      image: testing/service
+      container_name: testing-service-2
+      ports:
+        - 9090:5000
+      depends_on:
+        - base-build
+        - testing-service-1
