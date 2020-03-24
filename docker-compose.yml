@@ -1,8 +1,8 @@
 version: '2'
 services:
-    base-build:
-      image: testing/base
-      container_name: testing-base
+#    base-build-1:
+#      image: testing/base1
+#      container_name: testing-base
 
     testing-service-1:
       build:
@@ -11,18 +11,18 @@ services:
       image: testing/service
       container_name: testing-service-1
       ports:
-        - 9080:5000
-      depends_on:
-        - base-build
+        - 9005:9005
+#      depends_on:
+#        - base-build-1
 
-    testing-service-2:
-      build:
-        context: .
-        dockerfile: Dockerfile-runner
-      image: testing/service
-      container_name: testing-service-2
-      ports:
-        - 9090:5000
-      depends_on:
-        - base-build
-        - testing-service-1
+#    testing-service-2:
+#      build:
+#        context: .
+#        dockerfile: Dockerfile-runner
+#      image: testing/service
+#      container_name: testing-service-2
+#      ports:
+#        - 9000:9000
+#      depends_on:
+#        - base-build
+#        - testing-service-1

@@ -1,2 +1,4 @@
-# code-tool
-code-tool
+# cloud tool
+
+* Check the how-to-config.md
+ 
